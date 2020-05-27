@@ -6,11 +6,15 @@
     }
 
     try {
-        $nomee = $_POST['nome'];
-        $idadee =  $_POST['idade'];
-        $emaill = $_POST['email'];
+        include("../aula0403web2/modelo/aluno.php");
+        $aluno = new aluno();
 
-        $sql = "INSERT INTO aluno (nome, idade) VALUES ('" . $nomee ."', '" . $idadee . "')";
+        $aluno->setNome($_POST['nome']);
+        $aluno->setIdade($_POST['idade']);
+        $aluno->setEmail($_POST['email']);
+        $aluno->setRA($_POST['ra']);
+
+        $sql = "INSERT INTO aluno (nome, idade) VALUES ('" . $aluno->getNome() ."', '" . $aluno->getIdade() . "')";
         $pdo->exec($sql);
         echo "Inserido com sucesso.";
     } catch(PDOException $e) {

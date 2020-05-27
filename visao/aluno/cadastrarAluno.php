@@ -23,7 +23,11 @@
                             <label for="idadeID">Idade</label>
                             <input id="idadeID" name="idade" class="form-control" type="number" />
                         </div>
-                        <div class="form-group col-md-10">
+                        <div class="form-group col-md-2">
+                            <label for="raID">RA</label>
+                            <input id="raID" name="ra" class="form-control" type="number" />
+                        </div>
+                        <div class="form-group col-md-8">
                             <label for="emailID">E-Mail</label>
                             <input name="email" placeholder="fulano@gmail.com" id="emailID" class="form-control" type="email" />
                         </div>

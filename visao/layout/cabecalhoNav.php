@@ -12,8 +12,8 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/aula0403web2/aluno/cadastrarAluno.php">Cadastrar</a>
-                <a class="dropdown-item" href="/aula0403web2/aluno/buscarAluno.php">Buscar</a>
+                <a class="dropdown-item" href="/aula0403web2/visao/aluno/cadastrarAluno.php">Cadastrar</a>
+                <a class="dropdown-item" href="/aula0403web2/visao/aluno/buscarAluno.php">Buscar</a>
                 <a class="dropdown-item" href="#">Algo mais aqui</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Link isolado</a>

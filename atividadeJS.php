@@ -20,7 +20,7 @@
 
 <body>
     <div class="container">
-        <?php include "layout/cabecalhoNav.php"; ?>
+        <?php include "visao/layout/cabecalhoNav.php"; ?>
         <div class="row" style="margin-top: 3%">
             <div class="col-md-12">
                 <h4>Atividade JavaScript</h4>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <?php include "layout/rodape.php"; ?>
+        <?php include "visao/layout/rodape.php"; ?>
     </div>
 </body>
 
