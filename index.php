@@ -1,10 +1,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/aula0403web2/arquivos/bootstrap-4.1/css/bootstrap.min.css">
-    <script src="/aula0403web2/arquivos/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="/aula0403web2/arquivos/bootstrap-4.1/js/popper.min.js"></script>
-    <script src="/aula0403web2/arquivos/bootstrap-4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/aula0403web2/recursos/bootstrap-4.1/css/bootstrap.min.css">
+    <script src="/aula0403web2/recursos/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="/aula0403web2/recursos/bootstrap-4.1/js/popper.min.js"></script>
+    <script src="/aula0403web2/recursos/bootstrap-4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>

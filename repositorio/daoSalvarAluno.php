@@ -6,18 +6,27 @@
     }
 
     try {
-        include("../aula0403web2/modelo/aluno.php");
+        include("../modelo/aluno.php");
         $aluno = new aluno();
 
         $aluno->setNome($_POST['nome']);
         $aluno->setIdade($_POST['idade']);
         $aluno->setEmail($_POST['email']);
-        $aluno->setRA($_POST['ra']);
+        $aluno->setCPF($_POST['cpf']);
+        $aluno->setCidadeorigem($_POST['cidadeorigem']);
+        $aluno->setEstadoorigem($_POST['estadoorigem']);
+        $aluno->setLogin($_POST['login']);
+        $aluno->setSenha($_POST['senha']);
 
-        $sql = "INSERT INTO aluno (nome, idade) VALUES ('" . $aluno->getNome() ."', '" . $aluno->getIdade() . "')";
+        
+
+        $sql = "INSERT INTO aluno (nome, idade,cpf, email,cidadeorigem,estadoorigem,login,senha,ra)
+        VALUES ('" . $aluno->getNome() ."','" . $aluno->getIdade() . "', '" . $aluno->getCPF() ."',
+        '" . $aluno->getEmail() ."', '" . $aluno->getCidadeorigem() . "', '" . $aluno->getEstadoorigem() . "',
+        '" . $aluno->getLogin() . "', '" . $aluno->getSenha() . "', '" . $aluno->getRA() . "')";
         $pdo->exec($sql);
-        echo "Inserido com sucesso.";
+        echo "Inserido com sucesso." ;
     } catch(PDOException $e) {
-        die("Não foi possível executar o script: $sql. " . $e->getMessage());
+       echo "Inserido com sucesso." . $sql. " --------- ". $e->getMessage();
     }
 ?>
