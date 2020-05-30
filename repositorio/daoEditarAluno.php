@@ -9,6 +9,7 @@
         include("../modelo/aluno.php");
         $aluno = new aluno();
 
+        $idaluno = $_POST['idaluno'];
         $aluno->setNome($_POST['nome']);
         $aluno->setIdade($_POST['idade']);
         $aluno->setEmail($_POST['email']);
@@ -18,16 +19,14 @@
         $aluno->setLogin($_POST['login']);
         $aluno->setSenha($_POST['senha']);
 
-        
-
-        $sql = "INSERT INTO aluno (nome, idade,cpf, email,cidadeorigem,estadoorigem,login,senha,ra)
-        VALUES ('" . $aluno->getNome() ."','" . $aluno->getIdade() . "', '" . $aluno->getCPF() ."',
-        '" . $aluno->getEmail() ."', '" . $aluno->getCidadeorigem() . "', '" . $aluno->getEstadoorigem() . "',
-        '" . $aluno->getLogin() . "', '" . $aluno->getSenha() . "', '" . $aluno->getRA() . "')";
+        $sql = "update aluno set nome='" . $aluno->getNome() . "', idade='" . $aluno->getIdade() . "',
+        cpf='" . $aluno->getCPF() ."', email='" . $aluno->getEmail() ."',cidadeorigem='" . $aluno->getCidadeorigem() . "'
+        ,estadoorigem='" . $aluno->getEstadoorigem() . "',login='" . $aluno->getLogin() . "',senha=
+        '" . $aluno->getSenha() . "',ra='" . $aluno->getRA() . "' where idaluno = ". $idaluno;
         $pdo->exec($sql);
-        echo "<script>alert('Inserido com sucesso !!');</script>";
+        echo "<script>alert('Alterado com sucesso !!');</script>";
     } catch(PDOException $e) {
-       echo "Erro ao inserir." . $sql. " --------- ". $e->getMessage();
+       echo "Erro ao alterar." . $sql. " --------- ". $e->getMessage();
     }
-    header("refresh:0;url=/aula0403web2/visao/aluno/cadastrarAluno.php");
+    header("refresh:0;url=/aula0403web2/visao/aluno/buscarAluno.php");
 ?>

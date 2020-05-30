@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["login"])){
+    echo "<script>alert('Você deve estar logado para abrir essa página');</script>";
+    header("refresh:0;url=/aula0403web2/visao/login.php");
+}
+?>
 <html>
 
 <head>
@@ -39,22 +46,57 @@
                         </div>
                     </div>
                     <div class="form-row">
+                        <?php
+                        try {
+                            $pdo = new PDO("mysql:host=localhost;dbname=devweb2", "root", "root123");
+                        } catch (PDOException $e) {
+                            die("Não foi possível conectar. " . $e->getMessage());
+                        }
+                        ?>
                         <div class="form-group col-md-3">
                             <label for="estadoorigem">Estado</label>
                             <select class="form-control" id="estadoorigem" name="estadoorigem">
-                                <option selected value="0">Escolher...</option>
-                                <option value="1">Mato Grosso do Sul</option>
-                                <option value="2">São Paulo</option>
-                                <option value="3">Rio de Janeiro</option>
+                                <?php
+                                try {
+                                    //Primeiro Select -------------------------------------------
+                                    $sql = "SELECT * FROM estado";
+                                    $resultado = $pdo->query($sql);
+                                    if ($resultado->rowCount() > 0) {
+                                        while ($row = $resultado->fetch()) {
+                                            echo utf8_encode("<option value=\"" . $row['id'] . "\">" . $row['nome'] . "</option>");
+                                        }
+                                        unset($resultado);
+                                    } else {
+                                        echo "<option value=\"0\">Sem Registros</option>";
+                                    }
+                                    //Fim do Primeiro Select -------------------------------------
+                                } catch (PDOException $e) {
+                                    die("Não foi possível executar o script: $sql. " . $e->getMessage());
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="cidadeorigem">Cidade</label>
                             <select class="form-control" id="cidadeorigem" name="cidadeorigem">
-                                <option selected value="0">Escolher...</option>
-                                <option value="1">Cidade 1</option>
-                                <option value="2">Cidade 2</option>
-                                <option value="3">Cidade 3</option>
+                                <?php
+                                try {
+                                    //Segundo Select -------------------------------------------
+                                    $sql = "SELECT * FROM cidade";
+                                    $resultado = $pdo->query($sql);
+                                    if ($resultado->rowCount() > 0) {
+                                        while ($row = $resultado->fetch()) {
+                                            echo utf8_encode("<option value=\"" . $row['id'] . "\">" . $row['nome'] . "</option>");
+                                        }
+                                        unset($resultado);
+                                    } else {
+                                        echo "<option value=\"0\">Sem Registros</option>";
+                                    }
+                                    //Fim do Segundo Select -------------------------------------
+                                } catch (PDOException $e) {
+                                    die("Não foi possível executar o script: $sql. " . $e->getMessage());
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group col-md-3">

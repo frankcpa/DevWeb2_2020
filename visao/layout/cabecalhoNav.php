@@ -13,14 +13,13 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/aula0403web2/visao/aluno/cadastrarAluno.php">Cadastrar</a>
-                <a class="dropdown-item" href="/aula0403web2/visao/aluno/buscarAluno.php">Buscar</a>
-                <a class="dropdown-item" href="#">Algo mais aqui</a>
+                <a class="dropdown-item" href="/aula0403web2/visao/aluno/buscarAluno.php">Buscar/Editar/Remover</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Link isolado</a>
+                <a class="dropdown-item" href="#">Exemplo</a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Desativado</a>
+            <a class="nav-link" href="/aula0403web2/repositorio/daoDeslogar.php">Deslogar</a>
         </li>
     </ul>
 </div>

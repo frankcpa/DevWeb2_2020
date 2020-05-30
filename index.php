@@ -16,9 +16,6 @@
                     <div class="container">
                         <h1 class="display-4">Bem Vindo(a) !</h1>
                         <p class="lead">Aplicação demonstração de Desenvolvimento Web 2</p>
-                        <p class="lead">1 - Estruturar a aplicação criando pastas para visão, recursos, modelo e repositorio.</p>
-                        <p class="lead">2 - Criar as classes de modelo (pessoa e aluno)</p>
-                        <p class="lead">3 - Fazer o buscar todos com o exemplo do arquivo de aula</p>
                     </div>
                 </div>
             </div>
